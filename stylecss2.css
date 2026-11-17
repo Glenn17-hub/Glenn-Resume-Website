@@ -1,0 +1,415 @@
+/* =========================================
+   1. ELEMENT SELECTORS (Base Typography & Layout)
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #FAF8FB; /* Warm off-white tint that complements purple & coral */
+  color: #241033;            /* Deep plum-tinted charcoal for high readability */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #3B1554;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid #FF5C3E; /* Coral-orange underline */
+  display: inline-block;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  margin-top: 48px;
+  background-color: #3B1554;
+  color: #E9D8F2;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   2. ID SELECTORS (Sticky Navbar & Hero Banner)
+   ========================================= */
+
+.hero-flex {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* Aligns the image directly under the navbar name */
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+
+.hero-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #3B1554; /* Deep Purple */
+  padding: 14px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+#hero {
+  background: linear-gradient(135deg, #3B1554 0%, #7A2E63 100%); /* Purple to Plum gradient */
+  color: #FFFFFF;
+  padding: 64px 20px;
+}
+
+#hero h1 {
+  color: #FFFFFF;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+/* =========================================
+   3. CLASS SELECTORS (Navigation, Hero & Cards)
+   ========================================= */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Shared container alignment so navbar left edge = hero left edge */
+.nav-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  color: #FCD646;
+  background-color: #3B1554; /* Deep Purple badge */
+  font-family: 'Lobster', cursive;
+  font-weight: 700;
+  font-size: 5 rem;
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 6px;
+}
+
+
+.nav-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Display: inline-block demonstration */
+.nav-links li {
+  display: inline-block;
+  margin-left: 18px;
+  margin-bottom: 0;
+}
+
+.nav-links a {
+  color: #F3E8F9;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #FCD646; /* Yellow highlight on hover */
+}
+
+/* Hero Side-by-Side Layout */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #FF5C3E; /* Coral-orange ring */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  flex-shrink: 0;
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 620px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: #FCD646;
+  color: #3B1554;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #FDE68A;
+  margin-bottom: 12px;
+}
+
+.contact-info {
+  font-size: 0.92rem;
+  color: #F3E8F9;
+}
+
+.contact-info a {
+  color: #FCD646;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #FF5C3E;
+  text-decoration: underline;
+}
+
+.section-box {
+  margin-top: 40px;
+}
+
+/* Responsive 2-Column Card Grid */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 650px) {
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #EADFF0;
+  border-top: 4px solid #7A2E63; /* Plum top border */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(59, 21, 84, 0.05);
+}
+
+.full-card {
+  border-top: 1px solid #EADFF0;
+  border-left: 4px solid #7A2E63; /* Plum left accent */
+  margin-bottom: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Logos & Location Links */
+.edu-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.college-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.role-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid #EADFF0;
+  padding: 4px;
+}
+
+.org-name {
+  color: #7A2E63;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.org-link {
+  color: #7A2E63;
+  text-decoration: none;
+  border-bottom: 1px dashed #7A2E63;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.org-link:hover {
+  color: #FF5C3E;
+  border-bottom: 1px solid #7A2E63
+}
+
+.highlight-score {
+  color: #FF5C3E;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.badge-date {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #3B1554;
+  background-color: #FEF3C7; /* Soft warm yellow tint */
+  border: 1px solid #FCD646;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   4. PURE CSS CAROUSEL / SLIDER
+   ========================================= */
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.scroll-hint {
+  font-size: 0.85rem;
+  color: #7A2E63;
+  font-weight: 600;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 18px;
+  padding-bottom: 14px;
+}
+
+.carousel-slide {
+  flex: 0 0 82%;
+  max-width: 440px;
+  scroll-snap-align: start;
+  background-color: #FFFFFF;
+  border: 1px solid #EADFF0;
+  border-left: 5px solid #7A2E63; /* Plum slide indicator */
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(59, 21, 84, 0.06);
+}
+
+.slide-number {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FF5C3E;
+  margin-bottom: 6px;
+}
+
+.carousel-slide h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.carousel-slide p {
+  font-size: 0.95rem;
+  color: #241033;
+  margin-bottom: 14px;
+}
+
+.slide-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #7A2E63; /* Plum tag */
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* =========================================
+   5. INLINE-BLOCK SKILL BADGES
+   ========================================= */
+.sub-heading {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #7A2E63;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 6px;
+}
+
+.skill-badge {
+  display: inline-block;
+  background-color: #FCD646; /* Marigold Yellow */
+  color: #3B1554;            /* Deep Purple text */
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 0 8px 8px 0;
+}
+
+.soft-badge {
+  background-color: #7A2E63; /* Plum */
+  color: #FFFFFF;
+  font-weight: 600;
+}
